@@ -1,0 +1,60 @@
+<!-- 
+	Java RSA Encryption Decryption Example
+
+In this example, we will be encrypting a string using a public key and decrypting it using a public key. As 
+title says, we will be using the RSA (Rivest-Shamir-Adleman) public key cryptosystem. Making our life easy
+will be the Bouncy Castle Crypto APIs.
+
+Here we go, let's create a Maven project:
+
+This template will create a Maven quick start project.
+Edit the pom.xml as shown below.
+
+
+Next, let's create two RSA key pairs. One with no password and the other with a password. We can create the key pairs using openssl.
+Like so:
+
+We will use the PEM (Privacy Enhanced Mail) format as this is a de facto file format for storing and sending cryptographic keys.
+Our private key has a key size of 4096 bits.
+
+We ask help from the Bouncy Castle API to read our PEM files. 
+ -->
+
+<!-- mvn archetype:generate -DgroupId=com.blogspot.jpllosa -DartifactId=ecnrypt-decrypt -DarchetypeArtifactId=maven-archetype-quickstart -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.blogspot.jpllosa</groupId>
+  <artifactId>encrypt-decrypt</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>ecnrypt-decrypt</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+  	<maven.compiler.source>1.8</maven.compiler.source>
+  	<maven.compiler.target>1.8</maven.compiler.target>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.bouncycastle</groupId>
+        <artifactId>bcpkix-jdk15on</artifactId>
+        <version>1.68</version>
+    </dependency>
+    
+    <dependency>
+    	<groupId>commons-codec</groupId>
+    	<artifactId>commons-codec</artifactId>
+    	<version>1.15</version>
+    </dependency>
+  
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <!-- <scope>test</scope> -->
+    </dependency>
+  </dependencies>
+</project>
